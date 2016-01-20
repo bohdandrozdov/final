@@ -9,17 +9,11 @@ package com.example.service;
 
 import com.example.dao.TestDao;
 import com.example.model.Test;
-import java.io.Serializable;
-import java.util.List;
-import java.util.function.Consumer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
-
 public class TestService  {
     @Autowired
     private TestDao testDao;
