@@ -1,15 +1,18 @@
-/*
- * Decompiled with CFR 0_110.
- * 
- * Could not load the following classes:
- *  javax.persistence.ElementCollection
- *  javax.persistence.Entity
- *  javax.persistence.GeneratedValue
- *  javax.persistence.Id
- *  javax.persistence.Table
- *  javax.validation.constraints.NotNull
+/* 
+ * Decompiled with CFR 0_110. 
+ *  
+ * Could not load the following classes: 
+ *  javax.persistence.ElementCollection 
+ *  javax.persistence.Entity 
+ *  javax.persistence.GeneratedValue 
+ *  javax.persistence.Id 
+ *  javax.persistence.Table 
+ *  javax.validation.constraints.NotNull 
  */
 package com.example.model;
+
+
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 import javax.persistence.ElementCollection;
@@ -18,6 +21,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name="tests")
@@ -43,33 +47,41 @@ public class Test {
         this.answers = answers;
     }
 
+
     public int getFieldId() {
         return this.fieldId;
     }
+
 
     public void setFieldId(int fieldId) {
         this.fieldId = fieldId;
     }
 
+
     public int getId() {
         return this.id;
     }
+
 
     public List<String> getQuestions() {
         return this.questions;
     }
 
+
     public void setQuestions(List<String> questions) {
         this.questions = questions;
     }
+
 
     public List<String> getAnswers() {
         return this.answers;
     }
 
+
     public void setAnswers(List<String> answers) {
         this.answers = answers;
     }
+
 
     public boolean equals(Object o) {
         if (this == o) {
@@ -91,6 +103,7 @@ public class Test {
         return this.answers != null ? this.answers.equals(test.answers) : test.answers == null;
     }
 
+
     public int hashCode() {
         int result = this.id;
         result = 31 * result + this.fieldId;
@@ -98,5 +111,5 @@ public class Test {
         result = 31 * result + (this.answers != null ? this.answers.hashCode() : 0);
         return result;
     }
-}
-
+} 
+ 
