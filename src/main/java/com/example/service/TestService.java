@@ -1,18 +1,8 @@
-/*
- * Decompiled with CFR 0_110.
- *
- * Could not load the following classes:
- *  org.springframework.beans.factory.annotation.Autowired
- *  org.springframework.stereotype.Service
- */
 package com.example.service;
-
 
 import com.example.dao.TestDao;
 import com.example.model.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 

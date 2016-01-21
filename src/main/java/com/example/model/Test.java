@@ -1,18 +1,4 @@
-/* 
- * Decompiled with CFR 0_110. 
- *  
- * Could not load the following classes: 
- *  javax.persistence.ElementCollection 
- *  javax.persistence.Entity 
- *  javax.persistence.GeneratedValue 
- *  javax.persistence.Id 
- *  javax.persistence.Table 
- *  javax.validation.constraints.NotNull 
- */
 package com.example.model;
-
-
-import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 import javax.persistence.ElementCollection;
