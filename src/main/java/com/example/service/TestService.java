@@ -13,7 +13,7 @@ public class TestService  {
 
 
     public void persist(Test entity) {
-        this.testDao.save((Iterable<Test>) entity);
+        this.testDao.save( entity);
     }
 
 

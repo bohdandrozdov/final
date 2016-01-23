@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="test_progress.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:500&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<script type="text/javascript">
+	var currentQuestion = 0;
+	var data = window.location.hash.substring(1);
+	var parts = data.split("!");
+	var next = parts[0];
+	if(next==0)
+	{
+		window.location.href = 'myresult.html' + '#' + parts[1];
+	}
+	else
+	{
+	console.log(next);
+	var testID;
+	if(next==next%10)
+	{
+		testID = next;
+		next = 0;
+	}
+	else if(next==next%100) {
+		testID = (next-(next%10))/10;
+		next = next%10;
+	}
+	else
+	{
+		testID = (next - (next%100))/100;
+		next = next%100;
+	}
+	console.log(testID);
+	console.log(next);
+	var questions;
+
+	$.getJSON('http://localhost:8080/test/'+testID, function(data) {
+		questions = data.questions;
+		alert("JSON"+questions[0]);
+		initializeData();
+	});
+
+	var userAnswers = "[";
+
+	var initializeData = function()
+	{
+		document.getElementById("question").innerHTML = questions[currentQuestion];
+		document.getElementById("progress_1").className = "done_step";
+	}
+	var send = function(answer) {
+		userAnswers += "\"" + answer + "\"";
+		if (currentQuestion == 0)    document.getElementById("progress_2").className = "done_step";
+		if (currentQuestion == 1)    document.getElementById("progress_3").className = "done_step";
+		if (currentQuestion == 7)    document.getElementById("progress_4").className = "done_step";
+		if (currentQuestion == 8)    document.getElementById("progress_5").className = "done_step";
+		if (currentQuestion != 9) {
+			userAnswers += ", ";
+			document.getElementById("question").innerHTML = questions[++currentQuestion];
+			for (var i = 0; i <= currentQuestion; i++) {
+
+			}
+			if (currentQuestion > 2 && currentQuestion < 8) {
+				document.getElementById("progress_1").innerHTML = currentQuestion - 1;
+				document.getElementById("progress_2").innerHTML = currentQuestion;
+				document.getElementById("progress_3").innerHTML = currentQuestion + 1;
+				document.getElementById("progress_4").innerHTML = currentQuestion + 2;
+				document.getElementById("progress_5").innerHTML = currentQuestion + 3;
+			}
+		}
+		else {
+			userAnswers += "]";
+			alert(userAnswers);
+			var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "http://localhost:8080/test/" + testID,
+				"method": "POST",
+				"headers": {
+					"content-type": "application/json",
+					"cache-control": "no-cache",
+				},
+				"processData": false,
+				"data": userAnswers
+			}
+			var mark;
+			console.log("Preparing AJAX");
+			$.ajax(settings).done(function (response) {
+				console.log(userAnswers);
+				mark = response.mark;
+				console.log("MARK:" + mark);
+
+				var markAll = parts[1];
+				if (markAll != "") markAll += "&";
+				else markAll = "";
+
+				window.location.href = 'test_progress.html' + '#' + next + "!" + markAll + mark;
+				location.reload();
+			});
+
+			console.log("END AJAX");
+
+		}
+	}
+	}
+</script>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<p>L</p>
+		</div>
+		<div class="taken_test">Phys</div>
+		<div class="taken_test">Memes</div>
+	</header>
+	<div id="no_gap">
+	<div id="progress_container">
+		<div id="progress_1" class="undone_step">1</div><div class="link_block"><div class="link"></div></div>
+		<div id="progress_2"class="undone_step">2</div><div class="link_block"><div class="link"></div></div>
+		<div id="progress_3"class="undone_step">3</div><div class="link_block"><div class="link"></div></div>
+		<div id="progress_4"class="undone_step">4</div><div class="link_block"><div class="link"></div></div>
+		<div id="progress_5"class="undone_step">5</div>
+	</div>
+	<div id="content"><div id="inner">
+		<div id="question"></div>
+		<div id="answer_container">
+			<div id="first_var" onclick="send(1)" class="answer_block">А</div>
+			<div id="second_var" onclick="send(2)" class="answer_block">Б</div>
+			<div id="third_var" onclick="send(3)" class="answer_block">В</div>
+			<div id="fourth_var" onclick="send(4)" class="answer_block">Г</div>
+		</div>
+	</div></div></div>
+	</div>
+	<footer>fdsf
+	</footer>
+</body>
+</html>

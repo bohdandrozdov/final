@@ -1,0 +1,119 @@
+#no_gap {
+	width: 100%;
+	height: 100%;
+	left: 0;
+    right: 0;
+    top: 0;
+    padding-top: 3.5em;
+	position: absolute;
+}
+
+body {
+	background:#d5d5d5;
+}
+
+div {
+	display: block;
+}
+
+
+header {
+	width: 100%;
+	height: 3em;
+	left: 0;
+    right: 0;
+    top: 0;
+	margin: 0;
+    padding: 0;
+    border: 0;
+	position: fixed;
+	background-color: rgba(80, 80, 80, 0.85);
+	z-index: 2;
+}
+
+#logo {
+	width: 2.5em;
+	height: 2.5em;
+	color: #ffffff;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	background: rgb(255,185,0);
+	display: inline-block;
+	border: 0.25em solid rgb(135,65,0);
+}
+
+#logo  p {
+	-webkit-margin-before: 0.75em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0em;
+    -webkit-margin-end: 0em;
+}
+
+#content {
+	width: 90%;
+	height: 100%;
+    margin: auto;
+	position: relative;
+	display: -webkit-flex;;
+	padding: 0.8em 0.8em 0.8em 0.8em;
+	z-index: 1;
+	/*box-shadow:0 1px 2px #aaa;*/
+}
+
+#outer {
+    width: 0.1em; /* Or zero, or something very small */
+    margin: auto;
+    overflow: visible;
+}
+#inner {
+    margin-right: 5em;
+}
+
+#question {
+	max-width: 20em;
+	min-width: 13.8em;
+	margin: auto;
+	position: realative;
+	padding: 0.7em 0.5em 0.7em 0.5em;
+	line-height: 1.5em;
+	font-size: 2.5em;
+	color: rgb(125,55,0);
+	text-align: center;
+	vertical-align: middle;
+	font-family: Droid Sans, sans-serif;
+	background: rgb(243,243,239);
+	z-index: 2;
+	display: block;
+	box-shadow: 0 0.1em 0.2em 0 #777;
+	border-radius:3px;
+	border: 1px dashed rgba(109, 93, 41, 0.30);
+}
+
+#form_container {
+	background: #fff;
+	margin: auto;
+	margin-top: 1.5em;
+	max-width: 90vw;
+	display: block;
+	position: relative;
+	box-shadow:0 2px 3px #aaa;
+	border-radius:3px;
+	padding: 1.2em 0.5em 1.2em 0.5em;
+	font-size: 1.62em;
+	font-family: Droid Sans, serif;
+}
+
+.input_container {
+	box-sizing: border-box;
+	margin: auto;
+}
+
+select {
+	width: 90%;
+	margin-top: 0.4em;
+	border-spacing: 0;
+	font-size: 1.1em;
+	height: 1.8em;
+	padding: 0.1em 0.1em;
+}

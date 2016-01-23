@@ -66,7 +66,6 @@ public class TestController {
         this.service.persist(test);
     }
 
-
     @RequestMapping(value={"/result"}, method={RequestMethod.GET})
     public void showResult(@RequestParam String request, HttpServletResponse response) throws IOException {
         response.sendRedirect("http://abit-poisk.org.ua/score/result/" + request);

@@ -1,10 +1,9 @@
 #container {
 	margin: auto;
 	width: auto;
-	margin: auto;
 	min-height: 400px;
 	background: rgba(80, 80, 80, 0.85);
-	padding: 20px 20px 0 20px;
+	padding: 20px 20px 20px 20px;
 	text-align: center;
 	z-index: 999;
 	display: block;
@@ -31,7 +30,7 @@ div {
 #content {
     display: -webkit-flex;
 	position: absolute;
-	-webkit-justify-content:
+
 	-webkit-align-items: center;
     margin: 0 auto;
     width: 100vw;
@@ -43,7 +42,7 @@ div {
 
 #test, #ready {
 	display: inline-block;
-	margin: 40px 20px 20px 20px;
+	margin: 40px 20px 0px 20px;
 	text-align: center;
 	vertical-align: middle;
 	padding: 20px 30px 30px 20px;

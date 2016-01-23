@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="stylesheet" type="text/css" href="test_creation.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:500&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+	var handleSubmit = function () {
+		 send();
+ 		return false;
+	}
+	var send = function()
+	{
+		var package = "{";
+		package += "\"name\":\""+document.getElementById('name').value+"\", ";
+		package += "\"questions\":[";
+		package += "\""+document.getElementById('Q1').value+"\", ";
+		package += "\""+document.getElementById('Q2').value+"\", ";
+		package += "\""+document.getElementById('Q3').value+"\", ";
+		package += "\""+document.getElementById('Q4').value+"\", ";
+		package += "\""+document.getElementById('Q5').value+"\", ";
+		package += "\""+document.getElementById('Q6').value+"\", ";
+		package += "\""+document.getElementById('Q7').value+"\", ";
+		package += "\""+document.getElementById('Q8').value+"\", ";
+		package += "\""+document.getElementById('Q9').value+"\", ";
+		package += "\""+document.getElementById('Q10').value+"\", ";
+		package += "\""+document.getElementById('Q11').value+"\", ";
+		package += "\""+document.getElementById('Q12').value+"\", ";
+		package += "\""+document.getElementById('Q13').value+"\", ";
+		package += "\""+document.getElementById('Q14').value+"\", ";
+		package += "\""+document.getElementById('Q15').value+"\", ";
+		package += "\""+document.getElementById('Q16').value+"\", ";
+		package += "\""+document.getElementById('Q17').value+"\", ";
+		package += "\""+document.getElementById('Q18').value+"\", ";
+		package += "\""+document.getElementById('Q19').value+"\", ";
+		package += "\""+document.getElementById('Q20').value+"\"";		
+		package +="], "
+		package += "\"answers\":[";
+		package += "\""+document.getElementById('A1').value+"\", ";
+		package += "\""+document.getElementById('A2').value+"\", ";
+		package += "\""+document.getElementById('A3').value+"\", ";
+		package += "\""+document.getElementById('A4').value+"\", ";
+		package += "\""+document.getElementById('A5').value+"\", ";
+		package += "\""+document.getElementById('A6').value+"\", ";
+		package += "\""+document.getElementById('A7').value+"\", ";
+		package += "\""+document.getElementById('A8').value+"\", ";
+		package += "\""+document.getElementById('A9').value+"\", ";
+		package += "\""+document.getElementById('A10').value+"\", ";
+		package += "\""+document.getElementById('A11').value+"\", ";
+		package += "\""+document.getElementById('A12').value+"\", ";
+		package += "\""+document.getElementById('A13').value+"\", ";
+		package += "\""+document.getElementById('A14').value+"\", ";
+		package += "\""+document.getElementById('A15').value+"\", ";
+		package += "\""+document.getElementById('A16').value+"\", ";
+		package += "\""+document.getElementById('A17').value+"\", ";
+		package += "\""+document.getElementById('A18').value+"\", ";
+		package += "\""+document.getElementById('A19').value+"\", ";
+		package += "\""+document.getElementById('A20').value+"\"";		
+		package +="]"
+		package +="}";
+		console.log(package);
+
+		var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "http://localhost:8080/test",
+		"method": "POST",
+		"headers": {
+		"content-type": "application/json",
+		"cache-control": "no-cache",
+		},
+		"processData": false,
+		"data": package
+		}
+
+		$.ajax(settings).done(function (response) {
+		console.log(response);
+		});
+	}
+</script>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<p>L</p>
+		</div>
+	</header>
+	<div id="no_gap">
+		<div id="content">
+		<form id="myForm" onsubmit="handleSubmit()">
+		<div class="card">
+	        <div class="input_container">	
+	        	<input class="input-main" id="name" placeholder="Назва предмету"> </input>
+	        </div>
+	    </div>
+	    <div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q1" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A1" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q2" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A2" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q3" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A3" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q4" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A4" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q5" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A5" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q6" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A6" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q7" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A7" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q8" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A8" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q9" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A9" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q10" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A10" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+	    <div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q11" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A11" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q12" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A12" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q13" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A13" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q14" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A14" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q15" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A15" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q16" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A16" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q17" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A17" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q18" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A18" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+		<div class="card">
+            <div class="input_container">
+            	<textarea class="input-big" id="Q19" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select  id="A19" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+        </div>
+        <div class="card">
+        	<div class="input_container">
+            	<textarea class="input-big" id="Q20" placeholder="Текст питання та варіанти відповідей"> </textarea>
+                <select id="A20" class="input-stretch">
+                    <option value="0" selected="selected" disabled="disabled">Правильний варіант</option>
+                    <option value="А">А</option>
+                    <option value="Б">Б</option>
+                    <option value="В">В</option>
+                    <option value="Г">Г</option>
+            </select>
+            </div>
+	            <button class="btn btn-info" id="go">Вперед</button>
+			</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

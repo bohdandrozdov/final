@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="stylesheet" type="text/css" href="test_selection.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:500&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<script>
+
+var selectedTests = "";
+var pick = function(value)
+{
+	document.getElementById("test_"+value).className = "answer_block_marked";
+	selectedTests += value;
+	if(selectedTests.length == 3) window.location.href = 'test_progress.html' + '#' + selectedTests + "!";
+	console.log(selectedTests.length);
+}
+</script>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<p>L</p>
+		</div>
+	</header>
+	<div id="no_gap">
+		<div id="content">
+			<div id="answer_container">
+				<div id="test_1" onclick="pick(1)" class="answer_block"> Математика </div>
+				<div id="test_2" onclick="pick(2)" class="answer_block"> Фізика </div>
+				<div id="test_3" onclick="pick(3)" class="answer_block"> Українська мова та література </div>
+				<div id="test_4" onclick="pick(4)" class="answer_block"> Мемси </div>
+				<div id="test_5" onclick="pick(5)" class="answer_block"> Гра "Хто Бульда?" </div>
+				<div id="test_6" onclick="pick(6)" class="answer_block"> Поради призовнику </div>
+				<div id="test_7" onclick="pick(7)" class="answer_block"> Продам гараж </div>
+				<div id="test_8" onclick="pick(8)" class="answer_block"> Як зробити курсач, не отримавши в щі від Дроздова</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

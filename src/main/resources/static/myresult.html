@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="myresult.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:500&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<script>
+
+
+	var linkFormation = function()
+	{
+		var link = "2/";		//bachelor
+		link += document.getElementById("region").value+"/";
+		link += document.getElementById("branch").value+"/0/0/";
+		link += document.getElementById("zno1").value +"-"+ document.getElementById("k1").value +"/";
+		link += document.getElementById("zno2").value +"-"+ document.getElementById("k2").value +"/";
+		link += document.getElementById("zno3").value +"-"+ document.getElementById("k3").value +"/";
+		link += document.getElementById("zno4").value +"-"+ document.getElementById("k4").value +"/";
+		link += document.getElementById("extra-points").value + "/";
+		link += "1/1/";
+		link += document.getElementById("min-chance").value + "/";
+		
+		console.log(link);	
+		var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "http://localhost:8080/test",
+		"method": "POST",
+		"headers": {
+		"content-type": "application/json",
+		"cache-control": "no-cache",
+		},
+		"processData": false,
+		"data": link
+		}
+
+		$.ajax(settings).done(function (response) {
+		console.log(response);
+		});
+	}
+</script>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<p>L</p>
+		</div>
+	</header>
+	<div id="no_gap">
+		<div id="content">
+		<div id="form_container">
+	        <form onsubmit="linkFormation()">
+	            <div class="input_container">
+	                <select id="region" name="region" class="input-stretch">
+	                    <option value="0" selected="selected" disabled="disabled">Область</option>
+                        <option value="111">м. Київ</option>
+                        <option value="112">м. Севастополь</option>
+                        <option value="113">АР Крим</option>
+                        <option value="114">Вінницька обл.</option>
+                        <option value="115">Волинська обл.</option>
+                        <option value="116">Дніпропетровська обл.</option>
+                        <option value="117">Донецька обл.</option>
+                        <option value="118">Житомирська обл.</option>
+                        <option value="119">Закарпатська обл.</option>
+                        <option value="120">Запорізька обл.</option>
+                        <option value="121">Івано-Франківська обл.</option>
+                        <option value="122">Київська обл.</option>
+                        <option value="123">Кіровоградська обл.</option>
+                        <option value="124">Луганська обл.</option>
+                        <option value="125">Львівська обл.</option>
+                        <option value="126">Миколаївська обл.</option>
+                        <option value="127">Одеська обл.</option>
+                        <option value="128">Полтавська обл.</option>
+                        <option value="129">Рівненська обл.</option>
+                        <option value="130">Сумська обл.</option>
+                        <option value="131">Тернопільська обл.</option>
+                        <option value="132">Харківська обл.</option>
+                        <option value="133">Херсонська обл.</option>
+                        <option value="134">Хмельницька обл.</option>
+                        <option value="135">Черкаська обл.</option>
+                        <option value="136">Чернівецька обл.</option>
+                        <option value="137">Чернігівська обл.</option>
+                        <option value="138">За межами України</option>
+                </select>
+	            </div>
+	            <div class="input_container">
+                    <select id="branch" name="branch" class="input-stretch">
+	                    <option value="0" disabled="" selected="selected">Оберіть галузь знань</option>
+	                    <option value="40">Авіаційна та ракетно-космічна техніка</option>
+	                    <option value="41">Автоматика та управління</option>
+	                    <option value="42">Біотехнологія</option>
+	                    <option value="43">Будівництво та архітектура</option>
+	                    <option value="44">Ветеринарія</option>
+	                    <option value="45">Видавничо-поліграфічна справа</option>
+	                    <option value="46">Військові науки, національна безпека, безпека державного кордону</option>
+	                    <option value="47">Геодезія  та  землеустрій</option>
+	                    <option value="48">Гуманітарні науки</option>
+	                    <option value="49">Економіка та підприємництво</option>
+	                    <option value="50">Електроніка</option>
+	                    <option value="51">Електротехніка та електромеханіка</option>
+	                    <option value="52">Енергетика та енергетичне машинобудування</option>
+	                    <option value="53">Журналістика  та інформація</option>
+	                    <option value="54">Інформатика та обчислювальна техніка</option>
+	                    <option value="55">Інформаційна безпека</option>
+	                    <option value="56">Культура</option>
+	                    <option value="57">Машинобудування та матеріалообробка</option>
+	                    <option value="59">Менеджмент і адміністрування</option>
+	                    <option value="60">Металургія та матеріалознавство</option>
+	                    <option value="61">Метрологія, вимірювальна техніка та інформаційно-вимірювальні технології</option>
+	                    <option value="62">Мистецтво</option>
+	                    <option value="63">Міжнародні відносини</option>
+	                    <option value="65">Оброблювання деревини</option>
+	                    <option value="66">Педагогічна освіта</option>
+	                    <option value="67">Право</option>
+	                    <option value="68">Природничі науки</option>
+	                    <option value="69">Радіотехніка, радіоелектронні апарати  та зв’язок</option>
+	                    <option value="70">Рибне господарство та аквакультура</option>
+	                    <option value="71">Розробка корисних копалин</option>
+	                    <option value="72">Системні науки та кібернетика</option>
+	                    <option value="73">Сільське господарство і лісництво</option>
+	                    <option value="74">Соціальне забезпечення</option>
+	                    <option value="75">Соціально-політичні науки</option>
+	                    <option value="76">Сфера обслуговування</option>
+	                    <option value="77">Текстильна  та легка промисловість</option>
+	                    <option value="78">Техніка та енергетика аграрного виробництва</option>
+	                    <option value="79">Транспорт і транспортна інфраструктура</option>
+	                    <option value="80">Фармація</option>
+	                    <option value="81">Фізико-математичні науки</option>
+	                    <option value="82">Фізичне виховання, спорт і здоров’я людини</option>
+	                    <option value="83">Харчова промисловість та переробка сільськогосподарської продукції</option>
+	                    <option value="84">Хімічна технологія та інженерія</option>
+                    </select>
+                </div>
+	            <div id="chance-block">
+	                <div class="input_container">
+	                    <h4 class="secondary-text">
+	                        Предмети ЗНО та коефіцієнти
+	                    </h4>
+	                </div>
+	                <div class="input_container">
+	                    <label for="zno1" style="display: block">Атестат</label>
+	                    <input class="input-main" name="zno1" id="zno1" placeholder="Атестат 100..200">
+	                    <input class="input-main" name="k1" id="k1" size="6" placeholder="0.01..1">
+	                </div>
+	                <div class="input_container">
+	                    <label for="zno2" style="display: block">ЗНО №1</label>
+	                    <input class="input-main" name="zno2" id="zno2" placeholder="ЗНО №1 100..200">
+	                    <input class="input-main" name="k2" id="k2" size="6" placeholder="0.01..1">
+	                </div>
+	                <div class="input_container">
+	                    <label for="zno3" style="display: block">ЗНО №2</label>
+	                    <input class="input-main" name="zno3" id="zno3" placeholder="ЗНО №2 100..200">
+	                    <input class="input-main" name="k3" id="k3" size="6" placeholder="0.01..1">
+	                </div>
+	                <div class="input_container">
+	                    <label for="zno4" style="display: block">ЗНО №3</label>
+	                    <input class="input-main" id="zno4" name="zno4" placeholder="ЗНО №3 100..200">
+	                    <input class="input-main" name="k4" id="k4" size="6" placeholder="0.01..1">
+	                </div>
+	                <div class="input_container">
+	                    <label for="extra-points" style="display: block">Додаткові бали</label>
+	                    <input class="input-main" id="extra-points" name="extra_points" placeholder="Дод.бали 0..10">
+	                </div>
+	            </div>
+	            <div class="input_container">
+	                <label for="extra-points" style="display: block">Мін.ймовірність вступу</label>
+	                <input class="input-main" id="min-chance" name="min_chance" value="80" placeholder="Мін. шанс вступу 0..100">
+	                <div class="small-text secondary-text">50..100 % , вводити без знака "%"</div>
+	            </div>
+	            <button class="btn btn-info" type="submit" id="go">Вперед</button>
+	        </form>
+			</div>
+		</div>
+	</div>
+<script>
+	var data = window.location.hash.substring(1);
+	var parts = data.split("&");
+	console.log(parts[0]);
+	document.getElementById("zno2").value = parts[0];
+	document.getElementById("zno3").value = parts[1];
+	document.getElementById("zno4").value = parts[2];
+</script>
+
+</body>
+</html>
